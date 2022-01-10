@@ -8,16 +8,17 @@ var inputSignBt;
 var inputMa;
 var now = new Date();
 var month = now.getMonth() +1;
+var watch;
 
-    document.write(
-        now.getUTCFullYear()+"년 "+
-        month+"월 "+
-        now.getDate()+"일 "+
-        now.getHours()+"시 "+
-        now.getMinutes()+"분 "+
-        now.getSeconds()+"초 "+
-        now.getUTCMilliseconds()+"밀리초"
-    );
+function whattime() {
+    return now.getUTCFullYear()+"년 "+
+    month+"월 "+
+    now.getDate()+"일 "+
+    now.getHours()+"시 "+
+    now.getMinutes()+"분 "+
+    now.getSeconds()+"초 "+
+    now.getUTCMilliseconds()+"밀리초";
+}
 
 window.onload = function() {
     inputId = document.getElementById("loginId");
@@ -25,8 +26,8 @@ window.onload = function() {
     inputLoginBt = document.getElementById("loginButton");
     inputSignBt = document.getElementById("singupButton");
     inputMa = document.getElementById("loginMain");
-    mainContent = document.getElementById("loginMain")
-
+    clock = document.getElementById("time");
+    clock.innerHTML = whattime();
 }
 
 function login() {
